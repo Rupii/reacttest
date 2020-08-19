@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { MDBDataTable } from 'mdbreact';
 
 import { Card, Row, Col } from 'react-bootstrap';
 
@@ -10,7 +11,13 @@ export class Report extends Component {
             newdata: [],            
             headCount: 0,
             prensentCount: 0,
-            absentCount: 0
+            absentCount: 0,
+            data: {columns:[ {
+        label: 'Name',
+        field: 'name',
+        sort: 'asc',
+        width: 150
+      }], rows:[]}
         }
     }
 
@@ -26,7 +33,8 @@ export class Report extends Component {
                 newdata: response.data.rest,
                
             });
-
+           
+            
             this.setState({
                 headCount: this.state.newdata.length
             })
@@ -93,6 +101,7 @@ export class Report extends Component {
                 </Row>
 
                 <br></br>
+               
             </Card>
         )
     }

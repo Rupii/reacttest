@@ -36,3 +36,68 @@
   color: white;
   
 }
+#NavDropdown{
+  background-color: #ea0a8e;
+  color:"white";
+  width:"155px"
+}
+.social-container{
+
+  background: #eee;
+  padding: 8px 25px;
+  text-align: center;
+  margin-top: auto;
+  
+  
+  
+}
+
+html {
+  height: 100%;
+}
+body {
+  display: flex;
+  margin : 0;
+  line-height: 1.125em;
+  min-height: 100%;
+  flex-direction: column;
+  
+}
+Footer {
+  background: #eee;
+  color: white;
+  padding: 15px;
+  margin-top: auto;
+  text-align: center;
+}
+
+.social-title {
+  font-size: 15px;
+  font-weight: 200;
+  font-style: bold;
+}
+a.social {
+  margin: 0 1rem;
+  transition: transform 250ms;
+  display: inline-block;
+}
+
+a.social:hover {
+  transform: translateY(-2px);
+}
+
+a.youtube {
+  color: #eb3223;
+}
+
+a.instagram {
+  color: black;
+}
+
+a.twitter {
+  color: #49a1eb;
+}
+
+a.facebook {
+  color: #4968ad;
+}

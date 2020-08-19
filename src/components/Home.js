@@ -1,5 +1,6 @@
 import React from 'react';
 import { MDBDataTable } from 'mdbreact';
+import BarChart from 'react-bar-chart';
 
 
 const DatatablePage = () => {
@@ -503,13 +504,30 @@ const DatatablePage = () => {
   };
 
   return (
-    
-    <MDBDataTable
+    <div>
+      ----
+      {/* <div>
+      <MDBDataTable
       striped
       bordered
       small
       data={data}
     />
+        
+      </div>
+      <div style={{width: '50%'}}>
+      <BarChart ylabel='Quantity'
+                  width={100}
+                  height={500}
+                  margin={{top: 20, right: 20, bottom: 30, left: 40}}
+                  data={[
+                    {text: 'Man', value: 500}, 
+                    {text: 'Woman', value: 300} 
+                  ]}
+                  // onBarClick={this.handleBarClick}
+                  />
+    </div> */}
+    </div>
   );
 }
 

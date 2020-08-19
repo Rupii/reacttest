@@ -72,14 +72,15 @@ class Tracker extends Component {
        
 
         return (
+            <Container>
+            
+                {/* <Card style={{ width: '80rem', align:"center"}}> */}
+                    <br></br>
+                
 
-            <Container style ={ {  paddingLeft: 0,        paddingRight: 0}} >
-                <br></br>
-                <Card className="header" style={{border:"0"}}>
-
-                    <h2> Daily Activity</h2>
+                    <h2 style={{align:"center"}}> Daily Activity</h2>
                     
-                </Card>
+                
            
             <Row >  
             
@@ -113,7 +114,7 @@ class Tracker extends Component {
                
                 <Col >
                     <br></br>
-                <Card style={{width: '60rem', height: 'auto'}} >
+                <Card style={{width: '60rem', height: '60rem'}} >
                    
                     <div class="col-md-auto">
                         {/* {this.state.track && this.state.subtrack  */}
@@ -139,9 +140,8 @@ class Tracker extends Component {
                 </Card>
                 </Col>
                 </Row>
-          
-            </Container>
-
+                {/* </Card> */}
+                </Container>
         )
     }
 }
