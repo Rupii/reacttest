@@ -1,7 +1,8 @@
 import React, { Component } from "react";  
-// import "../App.css";  
+import "./../../App.css";  
 // import "../index.css";  
-import {Container, Col, Form,FormGroup,Row, Label, Input,Button} from 'reactstrap';  
+import {Container, Col, Form,FormGroup,Row, Label, Input} from 'reactstrap';  
+import {Button} from 'react-bootstrap';
 function validate(track, subTrack) {  
   return { 
     track:track.length === 0,
@@ -104,8 +105,11 @@ export default class ModifyTrack extends Component{
                   </div>
                   <div class="form-group">  
                   <div class="col-sm-10 offset-sm-4">  
-                    <button disabled={isDisabled} className="buttons" onClick={event => this.onSubmit(event)} >Modify</button>  
-                    <button className="buttons"><a href="/" target="_top" >Back</a></button>  
+                    {/* <button disabled={isDisabled} className="buttons" onClick={event => this.onSubmit(event)} >Modify</button>  
+                    <button className="buttons"><a href="/" target="_top" >Back</a></button>   */}
+                    <Button disabled={isDisabled} variant="flat" onClick={this.onSubmit}>Submit</Button>
+                        <span>   </span>
+                <Button variant="flat" href="/"  style ={ {  paddingLeft: 10}}>Back</Button>
                   </div>  
                   </div> 
                   <h6 style={{ fontSize: "10px", marginLeft: "228px",marginTop: "50px",color: "red" }}>Fields marked in * are mandatory</h6>  
