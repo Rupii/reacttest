@@ -15,7 +15,7 @@ import ModifyTrack from './components/sourabh/modify';
 import ViewTrack from './components/sourabh/view';
 
 import NTGenrate from './components/NTGenrate';
-import Card2 from './components/Card2';
+
 import Img1 from './assets/Image1.jpg';
 import './App.css';
 
@@ -39,7 +39,7 @@ class App extends Component {
         <Route exact path='/modifyTrack' component = {ModifyTrack}/>
         <Route exact path='/viewTrack' component = {ViewTrack}/>
         <Route exact path='/NTID' component={NTGenrate}/>
-        <Card2/> 
+        
         <Footer/>
        
       </ Router>

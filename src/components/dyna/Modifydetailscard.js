@@ -73,7 +73,7 @@ class Modifydetailscard extends Component{
     return(
         <div>
         <div className="col-md-6 offset-md-3 details-body">   
-        <div className="row">   
+        {/* <div className="row">    */}
         <div className="card custom-card bg-card "> 
         <div className="card-body">       
         <div>
@@ -321,7 +321,7 @@ class Modifydetailscard extends Component{
         </div>
         </div>
         </div> 
-        </div>
+        // </div>
         )
     }
 }
