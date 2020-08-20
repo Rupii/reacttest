@@ -1,11 +1,21 @@
  import React, { Component } from 'react'
  import Card2 from './Card2';
+ import {Card, Col, Row} from 'react-bootstrap';
+ import Img1 from './../assets/Image1.jpg';
+
 export class Home extends Component {
   render() {
     return (
-      <div>
-        <Card2/> 
+      <div style={{ backgroundImage: `url(${Img1})` }} >
+        <Row>
+          <Col>
+          <Card2 /> 
+          </Col> 
+          <Col>
+          </Col>
+        </Row>
 
+     
 
       </div>
     )

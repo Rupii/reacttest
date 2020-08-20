@@ -72,13 +72,13 @@ class Tracker extends Component {
        
 
         return (
-            <Container>
-            
-                {/* <Card style={{ width: '80rem', align:"center"}}> */}
+            <Container style={{padding:"0", margin:"0.5"}} >
+            <Card >
+                
                     <br></br>
                 
 
-                    <h2 style={{align:"center"}}> Daily Activity</h2>
+                    <h2 style={{textAlign:"center", color:"red"}}> Daily Activity</h2>
                     
                 
            
@@ -86,11 +86,11 @@ class Tracker extends Component {
             
                 <Col  lg="30rem" >
                 
-                    <br></br>
+                    
                 <Card style={{ width: '16rem' }}>
                 
                         <SelectTrack slectTrackChange={this.trackChange} />
-                        <br></br>
+                        
                         <SelectSub track={this.state.track} selectSubtrackChange={this.subtrackChange} />
                         <br></br>
                        <lable className="Calender">
@@ -114,7 +114,7 @@ class Tracker extends Component {
                
                 <Col >
                     <br></br>
-                <Card style={{width: '60rem', height: '60rem'}} >
+                <Card style={{width: '60rem', height: 'auto'}} >
                    
                     <div class="col-md-auto">
                         {/* {this.state.track && this.state.subtrack  */}
@@ -138,9 +138,11 @@ class Tracker extends Component {
                     </div>
                     <br></br>
                 </Card>
+                
+            
                 </Col>
                 </Row>
-                {/* </Card> */}
+                </Card>
                 </Container>
         )
     }
