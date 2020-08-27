@@ -2,6 +2,18 @@ import React, { Component } from 'react'
 // import {Button, Card, Nav, Form} from 'react-bootstrap'
 import { Navbar, Nav ,NavDropdown ,Form,Button,FormControl} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import styled from 'styled-components';
+
+
+const HoverText = styled.p`
+	color: black;
+	:hover {
+    color: white;
+    background-color:#e20074;
+		cursor: pointer;
+	}
+`
+
 class Nabar extends Component {
     render() {
         return (
@@ -43,27 +55,27 @@ class Nabar extends Component {
 Infosys | T-Mobile</Navbar.Brand>
 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 <Navbar.Collapse id="responsive-navbar-nav" style={{backgroundColor:"#ea0a8e",color:"white",width:"155px"}}>
-  <Nav className="mr-auto " style={{backgroundColor:"#ea0a8e",color:"white",width:"155px"}}>
-    <NavDropdown title="Team Member" style={{backgroundcolor:"#ea0a8e"}} id="collasible-nav-dropdown">
-      <NavDropdown.Item style={{color:"Black",width:"155px"}} href="/Add">Add</NavDropdown.Item>
+  <Nav className="decorated-link mr-auto " style={{backgroundColor:"#ea0a8e",color:"white",width:"155px"}}>
+    <NavDropdown title="Team Member" style={{backgroundcolor:"#ea0a8e", color:"white"}} id="collasible-nav-dropdown">
+      <NavDropdown.Item style={{textAlign:"center",color:"Black",width:"158px",height:"24px",fontSize:"15px",padding:"0px"}} href="/Add"><HoverText>Add</HoverText></NavDropdown.Item>
       <NavDropdown.Item style={{color:"Black",width:"155px"}} href="/Modify">Modify</NavDropdown.Item>
       <NavDropdown.Item style={{color:"Black",width:"155px"}} href="/view">View</NavDropdown.Item>
     </NavDropdown>
-    <NavDropdown title="Project Track Details" id="collasible-nav-dropdown">
+    <NavDropdown title="Project Track Details" id="collasible-nav-dropdown" >
       <NavDropdown.Item style={{color:"Black",width:"155px"}} href="/AddTrack">Add</NavDropdown.Item>
       <NavDropdown.Item style={{color:"Black",width:"155px"}} href="/ModifyTrack">Modify</NavDropdown.Item>
       <NavDropdown.Item style={{color:"Black",width:"155px"}} href="/ViewTrack">View</NavDropdown.Item>
     </NavDropdown>
     
-    <Nav.Link href="/Tracker">Tracker</Nav.Link>
-    <Nav.Link href="/NTID">NTID</Nav.Link>
+    <Nav.Link href="/Tracker" style={{color:"white"}}>Tracker</Nav.Link>
+    <Nav.Link href="/NTID" style={{color:"white"}}>NTID</Nav.Link>
 
   </Nav>
   
   <Nav>
-    <Nav.Link href="About">About</Nav.Link>
-    <Nav.Link href="#">Feedback</Nav.Link>
-    <Nav.Link eventKey={2} href="#Contact Us">
+    <Nav.Link href="About" style={{color:"white"}}>About</Nav.Link>
+    <Nav.Link href="#" style={{color:"white"}}>Feedback</Nav.Link>
+    <Nav.Link href="#" style={{color:"white"}}>
       Contact Us
     </Nav.Link>
   </Nav>

@@ -1,23 +1,53 @@
- import React, { Component } from 'react'
- import Card2 from './Card2';
- import {Card, Col, Row} from 'react-bootstrap';
- import Img1 from './../assets/Image1.jpg';
+import React, { Component } from 'react'
+import Card2 from './Card2';
+import { Card, Col, Row } from 'react-bootstrap';
+import './footer.css'
+import bg from './../assets/bgv.mp4';
+import Capture1 from './../assets/Capture1.JPG';
+import Capture2 from './../assets/Capture2.JPG';
+import Capture3 from './../assets/Capture3.JPG';
+import Capture4 from './../assets/Capture4.JPG';
 
 export class Home extends Component {
   render() {
     return (
-      <div style={{ backgroundImage: `url(${Img1})` }} >
-        <Row>
-          <Col>
-          <Card2 /> 
-          </Col> 
-          <Col>
-          </Col>
-        </Row>
+      // <div class="card" style={{ align:"center", width:"40rem"}}>
+      <div style={{ backgroundImage: `url(${bg})` }} >
+        <div className="container">
 
-     
+          <div className="wrapper animated zoomInRight" >
+            {/* <Card2 /> */}
+            <div class="card" style={{  width: "50rem" }}>
+              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src={Capture1} alt="First slide" />
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src={Capture2} />
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src={Capture3} />
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src={Capture4} />
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      </div>
+        {/* </Card> */}
+      </div >
     )
   }
 }
@@ -50,7 +80,7 @@ export default Home;
 // import React from 'react';
 // import PropTypes from 'prop-types';
 // import clsx from 'clsx';
-// import { lighten, makeStyles } from '@material-ui/core/styles';
+// import {lighten, makeStyles} from '@material-ui/core/styles';
 // import Table from '@material-ui/core/Table';
 // import TableBody from '@material-ui/core/TableBody';
 // import TableCell from '@material-ui/core/TableCell';
@@ -132,7 +162,7 @@ export default Home;
 //   };
 
 //   return (
-    
+
 //     <TableHead>
 //       <TableRow>
 //         <TableCell padding="checkbox">
@@ -166,7 +196,7 @@ export default Home;
 //         ))}
 //       </TableRow>
 //     </TableHead>
-  
+
 //   );
 // }
 
@@ -327,7 +357,7 @@ export default Home;
 //   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
 //   return (
-    
+
 //     <div className={classes.root}>
 //       <Paper className={classes.paper}>
 //         <EnhancedTableToolbar numSelected={selected.length} />
@@ -353,7 +383,7 @@ export default Home;
 //                 .map((row, index) => {
 //                   const isItemSelected = isSelected(row.name);
 //                   const labelId = `enhanced-table-checkbox-${index}`;
-                  
+
 //                   return (
 //                     <TableRow
 //                     hover
@@ -378,7 +408,7 @@ export default Home;
 //                       <TableCell align="right">{row.carbs}</TableCell>
 //                       <TableCell align="right">{row.protein}</TableCell>
 //                     </TableRow>
-                
+
 //                   );
 //                 })}
 //               {emptyRows > 0 && (
@@ -404,6 +434,6 @@ export default Home;
 //         label="Dense padding"
 //       />
 //     </div>
-   
+
 //   );
 // }

@@ -7,7 +7,7 @@ import DateRangeIcon from '@material-ui/icons/DateRange';
 import Report from './Report';
 // import DatePicker from './DatePicker';
 import DatePicker from "react-datepicker";
-import { Card, Container, Button,Row, Col,  Jumbotron } from 'react-bootstrap';
+import { Card, Container, Button, Row, Col, Jumbotron } from 'react-bootstrap';
 
 
 
@@ -22,14 +22,14 @@ class Tracker extends Component {
             subtrack: '',
             startDate: new Date(),
             true: false,
-            setRt:false
+            setRt: false
         }
     }
     trackChange = (event) => {
         this.setState({
             track: event.target.value,
             true: false,
-            setRt : false
+            setRt: false
         })
         console.log(this.state.track)
         console.log(this.state.date)
@@ -38,7 +38,7 @@ class Tracker extends Component {
         this.setState({
             subtrack: event.target.value,
             true: false,
-            setRt : false
+            setRt: false
         })
         console.log("onChange", event.target.value)
 
@@ -47,103 +47,108 @@ class Tracker extends Component {
         this.setState({
             startDate: date,
             true: false,
-            setRt : false
+            setRt: false
         });
-        
+
         console.log(date.toISOString().substr(0, 10))
-        
+
     };
     setTrue = () => {
         this.setState({
             true: true,
-            setRt : false
+            setRt: false
         })
     }
-    setReport = () =>{
+    setReport = () => {
         this.setState({
-            setRt : true,
+            setRt: true,
             true: false
         })
     }
 
-   
+
 
     render() {
-       
+
 
         return (
-            <Container style={{padding:"0", margin:"0.5"}} >
-            <Card >
-                
-                    <br></br>
-                
+            <div className="container">
+                <Card style={{ width: '80rem', align: "center", marginLeft: "-4.5rem", height: "auto" }}>
 
-                    <h2 style={{textAlign:"center", color:"red"}}> Daily Activity</h2>
-                    
-                
-           
-            <Row >  
-            
-                <Col  lg="30rem" >
-                
-                    
-                <Card style={{ width: '16rem' }}>
-                
-                        <SelectTrack slectTrackChange={this.trackChange} />
-                        
-                        <SelectSub track={this.state.track} selectSubtrackChange={this.subtrackChange} />
+
+                    <Card >
+
                         <br></br>
-                       <lable className="Calender">
-                        <DatePicker
-                        //  format= 'DD-MM-YYYY'
-                        selected={this.state.startDate}
-                        maxDate={new Date}
-                        onChange={this.handleChange}
-                        
-                    /> <DateRangeIcon /></lable>
-                    
-                    
-                        
-                        <br></br>
+
+
+                        <h2 style={{ textAlign: "center", color: "#ea0a8e" }}> Daily Activity</h2>
+
+
+
+                        <Row >
+
+                            <Col lg="30rem" >
+
+
+                                <Card style={{ width: '16rem', marginLeft: "2.4rem" }}>
+
+                                    <SelectTrack slectTrackChange={this.trackChange} />
+
+                                    <SelectSub track={this.state.track} selectSubtrackChange={this.subtrackChange} />
+                                    <br></br>
+                                    <lable className="Calender">
+                                        <DatePicker
+                                            //  format= 'DD-MM-YYYY'
+                                            selected={this.state.startDate}
+                                            maxDate={new Date}
+                                            onChange={this.handleChange}
+
+                                        /> <DateRangeIcon /></lable>
+
+
+
+                                    <br></br>
+                                </Card>
+                                <br></br>
+                                <Button variant="flat" onClick={this.setTrue} style={{ marginLeft: "2.5rem" }}>Submit</Button>
+                                <span>      </span>
+                                <Button variant="flat" onClick={this.setReport} style={{ paddingLeft: 10 }}>View Report</Button>
+                            </Col>
+
+                            <Col >
+                                <br></br>
+                                <Card style={{ width: '60rem', height: 'auto' }} >
+
+                                    <div class="col-md-auto">
+                                        {/* {this.state.track && this.state.subtrack  */}
+                                        {this.state.true
+                                            ? <div> <br></br>
+                                                <DetailsHeader startDate={this.state.startDate.toISOString()}
+                                                    subtrack={this.state.subtrack} track={this.state.track}
+                                                />
+                                                <TrackerDetails track={this.state.subtrack} subtrack={this.state.subtrack} startDate={this.state.startDate} />
+                                            </div>
+                                            : <p></p>
+                                        }
+                                        {this.state.setRt
+                                            ? <Report
+                                                track={this.state.subtrack}
+                                                subtrack={this.state.subtrack}
+                                                startDate={this.state.startDate.toISOString()} />
+                                            : <p></p>
+                                        }
+
+                                    </div>
+                                    <br></br>
+                                </Card>
+
+
+                            </Col>
+                        </Row>
+                    </Card>
+
                 </Card>
-                <br></br>
-                <Button variant="flat" onClick={this.setTrue}>Submit</Button>
-                <span>      </span>
-                <Button variant="flat" onClick={this.setReport}  style ={ {  paddingLeft: 10}}>View Report</Button>
-                </Col>
-               
-                <Col >
-                    <br></br>
-                <Card style={{width: '60rem', height: 'auto'}} >
-                   
-                    <div class="col-md-auto">
-                        {/* {this.state.track && this.state.subtrack  */}
-                         {this.state.true
-                            ? <div> <br></br>
-                            <DetailsHeader startDate={this.state.startDate.toISOString()}
-                             subtrack={this.state.subtrack} track={this.state.track}
-                             />        
-                            <TrackerDetails track={this.state.subtrack} subtrack={this.state.subtrack} startDate={this.state.startDate}/>
-                            </div>
-                            : <p></p>
-                        }
-                        {this.state.setRt
-                            ? <Report 
-                            track={this.state.subtrack} 
-                            subtrack={this.state.subtrack} 
-                            startDate={this.state.startDate.toISOString()}/>
-                            : <p></p>
-                        }
-                       
-                    </div>
-                    <br></br>
-                </Card>
-                
-            
-                </Col>
-                </Row>
-                </Card>
-                </Container>
+            </div>
         )
     }
 }
